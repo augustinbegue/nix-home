@@ -14,7 +14,7 @@ in
       userSettings = {
         "workbench.colorTheme" = "One Dark Pro";
         "editor.fontFamily" = vars.font;
-        "editor.fontSize" = 18;
+        "editor.fontSize" = 16;
         "editor.fontLigatures" = true;
         "window.menuBarVisibility" = "toggle";
       };

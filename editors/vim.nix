@@ -5,80 +5,30 @@
     enable = true;
 
     plugins = with pkgs.vimPlugins; [ 
-      vim-airline
-      onedark-vim
-      vim-gitgutter
+      onehalf
       vim-polyglot
-      ];
+      vim-airline
+    ];
 
     settings = {
-      ignorecase = true;
+      number = true;
+      background = "dark";
     };
 
     extraConfig = ''
-      " remove annoying beep
-      set belloff=all
-
-      " set encoding
-      set encoding=utf-8 fileencodings=
-
-      " Shows matching brackets
-      set showmatch 
-
-      " set visible trailing characters
-      set list listchars=tab:»\ ,trail:·
-
-      " if you really want to use the mouse
-      set mouse=a
-      set ttymouse=sgr " wide monitor mouse fix
-
-      " set numbers on the left
-      set number
-
-      " set line at 80 char
-      set cc=80
-
-      " indentation
-      filetype plugin indent on
-      set autoindent
-      set smartindent
-
-      " set tab size
-      set expandtab
-      set shiftwidth=4
-      set tabstop=4
-      set softtabstop=4
-
-      " custom shotcuts
-      let mapleader="\<Space>"
-      nnoremap <Space> <nop>
-      nnoremap <Leader>f :Explore<CR>
-      nnoremap <Leader>w :w<CR>
-
-      " c braces setup
-      inoremap {<CR> {<CR>}<Esc>ko
-
-      " reduce latency when escaping
-      set ttimeoutlen=10
-
-      " makefiles settings
-      autocmd Filetype make setlocal noexpandtab
-
-      " c files
-      autocmd BufRead,BufNewFile *.c,*.h setlocal cinoptions+=:0 " case statement indent fix
-      autocmd BufRead,BufNewFile *.c,*.h setlocal comments=s:/**,mb:**,ex:*/,s:/*,mb:**,ex:*/
-
-      " colorscheme
-      packadd! onedark.vim
-      syntax on
-      colorscheme onedark
-
-      " packages ?
-      packadd! vim-airline
-      packadd! vim-gitgutter
-      packadd! vim-polyglot
-
-      packadd termdebug
+    "One Half Dark Theme
+    syntax on
+    set t_Co=256
+    set cursorline
+    colorscheme onehalfdark
+    let g:airline_theme='onehalfdark'
+    " lightline
+    " let g:lightline = { 'colorscheme': 'onehalfdark' }
+    if exists('+termguicolors')
+      let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+      let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+      set termguicolors
+    endif
     '';
   };
 }
