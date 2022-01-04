@@ -7,22 +7,17 @@ let
   alt = "Mod1";
   font = "CaskaydiaCove Nerd Font";
   terminal = "alacritty";
+  colors = import ./common/colors.nix;
 in
 {
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
   home.username = "abegue";
   home.homeDirectory = "/home/abegue";
-
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
   home.stateVersion = "21.11";
+
+  imports = [
+    ./editors/vscode.nix
+    ./editors/emacs.nix
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -200,17 +195,6 @@ in
       };
 
       settings =
-        let colors = {
-          background = "#282C34";
-          background-alt = "#434954";
-          foreground = "#ffffff";
-          foreground-alt = "#dfdfdf";
-          primary = "#61AFEF";
-          secondary = "#56B6C2";
-          alert = " #E06C75";
-          warning = "#E5C07B";
-          success = "#98C379";
-        }; in
         {
           "bar/desktop" = {
             width = "100%";
@@ -558,22 +542,7 @@ in
   };
 
   programs = {
-    vscode = {
-      enable = true;
-      extensions = with pkgs.vscode-extensions; [
-        bbenoist.nix
-        zhuangtongfa.material-theme
-        ms-vscode.cpptools
-        svelte.svelte-vscode
-      ];
-      userSettings = {
-        "workbench.colorTheme" = "One Dark Pro";
-        "editor.fontFamily" = font;
-        "editor.fontSize" = 18;
-        "editor.fontLigatures" = true;
-        "window.menuBarVisibility" = "toggle";
-      };
-    };
+    
     alacritty = {
       enable = true;
       settings = {
