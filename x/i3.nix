@@ -1,6 +1,6 @@
 { lib, pkgs, ... }:
 
-let colors = import ../common/colors.nix;
+let _colors = import ../common/colors.nix;
     vars = import ../common/vars.nix;
     mod = vars.mod;
     alt = vars.alt;
@@ -123,32 +123,32 @@ in
 
       colors = {
         focused = {
-          border = "${colors.background-alt}";
-          background = "${colors.background-alt}";
-          text = "${colors.foreground}";
-          indicator = "${colors.background}";
-          childBorder = "${colors.background}";
+          border = "${_colors.background-alt}";
+          background = "${_colors.background-alt}";
+          text = "${_colors.foreground}";
+          indicator = "${_colors.background}";
+          childBorder = "${_colors.background}";
         };
 
         focusedInactive = {
-          border = "${colors.background}";
-          background = "${colors.background}";
-          text = "${colors.foreground}";
-          indicator = "${colors.background}";
-          childBorder = "${colors.background}";
+          border = "${_colors.background}";
+          background = "${_colors.background}";
+          text = "${_colors.foreground}";
+          indicator = "${_colors.background}";
+          childBorder = "${_colors.background}";
         };
 
         unfocused = {
-          border = "${colors.background}";
-          background = "${colors.background}";
-          text = "${colors.background-alt}";
-          indicator = "${colors.background}";
-          childBorder = "${colors.background}";
+          border = "${_colors.background}";
+          background = "${_colors.background}";
+          text = "${_colors.background-alt}";
+          indicator = "${_colors.background}";
+          childBorder = "${_colors.background}";
         };
 
         urgent = {
-          border = "${colors.background}";
-          background = "${colors.background}";
+          border = "${_colors.background}";
+          background = "${_colors.background}";
           text = "#E06C75";
           indicator = "#900000";
           childBorder = "#900000";
@@ -157,7 +157,7 @@ in
         placeholder = {
           border = "#0c0c0c";
           background = "#0c0c0c";
-          text = "${colors.foreground}";
+          text = "${_colors.foreground}";
           indicator = "#000000";
           childBorder = "#0c0c0c";
         };
