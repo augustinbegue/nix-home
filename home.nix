@@ -11,6 +11,7 @@
     ./x/i3.nix
     ./x/polybar.nix
     ./terminal/alacritty.nix
+    ./terminal/zsh.nix
   ];
 
   # Let Home Manager install and manage itself.
