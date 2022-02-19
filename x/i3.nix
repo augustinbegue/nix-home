@@ -45,7 +45,7 @@ in
       keybindings = {
         "${mod}+Return" = "exec ${vars.terminal}";
         "${mod}+Shift+q" = "kill";
-        "${mod}+d" = "exec $HOME/.config/rofi/launchers/colorful/launcher.sh";
+        "${mod}+d" = "exec $HOME/.config/rofi/launcher.sh";
 
         # Brightness Control
         "XF86MonBrightnessDown" = "exec --no-startup-id light -U 5";

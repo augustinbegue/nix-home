@@ -17,6 +17,11 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  home.packages = with pkgs; [
+    jetbrains.idea-ultimate
+    jdk
+  ];
+
   services = {
     picom = {
       enable = true;
@@ -47,6 +52,15 @@
   programs = {
     rofi = {
       enable = true;
+    };
+    htop = {
+      enable = true;
+      settings = {
+        left_meters = [ "LeftCPUs2" "Memory" "Swap" ];
+        left_right = [ "RightCPUs2" "Tasks" "LoadAverage" "Uptime" ];
+        setshowProgramPath = false;
+        treeView = true;
+      };
     };
   };
 }

@@ -10,12 +10,17 @@ in
         zhuangtongfa.material-theme
         ms-vscode.cpptools
         svelte.svelte-vscode
+        bradlc.vscode-tailwindcss
+        esbenp.prettier-vscode
+        eamodio.gitlens
+        github.copilot
       ];
       userSettings = {
         "workbench.colorTheme" = "One Dark Pro";
         "editor.fontFamily" = vars.font;
         "editor.fontSize" = 16;
         "editor.fontLigatures" = true;
+        "editor.formatOnSave" = true;
         "window.menuBarVisibility" = "toggle";
       };
     };
