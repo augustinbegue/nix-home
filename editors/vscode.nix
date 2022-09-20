@@ -14,6 +14,7 @@ in
         esbenp.prettier-vscode
         eamodio.gitlens
         github.copilot
+        james-yu.latex-workshop
       ];
       userSettings = {
         "workbench.colorTheme" = "One Dark Pro";

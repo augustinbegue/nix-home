@@ -51,6 +51,9 @@ in
         "XF86MonBrightnessDown" = "exec --no-startup-id light -U 5";
         "XF86MonBrightnessUp" = "exec --no-startup-id light -A 5";
 
+        # Lock
+        "${mod}+l" = "exec --no-startup-id i3lock-fancy-rapid 5 3";
+
         # Sound Control
         "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
         "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%";

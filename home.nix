@@ -18,15 +18,18 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    mailspring
     jetbrains.idea-ultimate
     jdk
+    texlive.combined.scheme-full
+    i3lock-fancy-rapid
   ];
 
   services = {
     picom = {
       enable = true;
 
-      blur = false;
+      blur = true;
 
       shadow = false;
 
